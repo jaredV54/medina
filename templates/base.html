@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/about.css">
+    <link rel="stylesheet" href="static/food.css">
+    <link rel="stylesheet" href="static/hobbies.css">
+    <link rel="stylesheet" href="static/home.css">
+    <link rel="stylesheet" href="static/milestone.css">
+    <link rel="stylesheet" href="static/profession.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/" class="{{ 'active' if request.path == '/' else '' }}">Home</a></li>
+            <li><a href="/about" class="{{ 'active' if request.path == '/about' else '' }}">About Me</a></li>
+            <li><a href="/hobbies" class="{{ 'active' if request.path == '/hobbies' else '' }}">Hobbies</a></li>
+            <li><a href="/profession" class="{{ 'active' if request.path == '/profession' else '' }}">Profession</a></li>
+            <li><a href="/food" class="{{ 'active' if request.path == '/food' else '' }}">Food Delicacies</a></li>
+            <li><a href="/milestones" class="{{ 'active' if request.path == '/milestones' else '' }}">School Milestones</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>My Personal Portfolio</h1>
+    </header>
+    
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+    </footer>
+</body>
+</html>

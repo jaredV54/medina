@@ -1,0 +1,122 @@
+.milestone {
+  position: relative;
+}
+
+.milestone::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+  opacity: 0.1;
+  z-index: 0;
+  border-radius: 50%;
+}
+
+.achievements {
+  position: relative;
+  background-color: var(--light-gray);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+  border-left: 4px solid;
+}
+
+.achievements:nth-child(3n+1) {
+  border-left-color: var(--primary);
+}
+
+.achievements:nth-child(3n+2) {
+  border-left-color: var(--secondary);
+}
+
+.achievements:nth-child(3n+3) {
+  border-left-color: var(--third);
+}
+
+.achievements:last-child {
+  margin-bottom: 0;
+}
+
+.achievements:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.achievements h3 {
+  position: relative;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.achievements h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 1.5px;
+}
+
+.achievements p {
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+}
+
+.achievements ul {
+  list-style-type: none;
+}
+
+.achievements li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.achievements li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 50%;
+}
+
+@media (min-width: 992px) {
+  .milestone {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  .achievements {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .milestone {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .achievements:last-child {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 767px) {
+  .achievements {
+    padding: 1.5rem;
+  }
+}
